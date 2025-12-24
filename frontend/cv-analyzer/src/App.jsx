@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DualPanelUploader from './components/DualPanelUploader';
 import InterviewPage from './components/InterviewPage';
-import axios from 'axios';
+import api from './api/axiosConfig'; // تأكد من صحة المسار حسب مكان الملف
 
 function App() {
   const [analysisData, setAnalysisData] = useState(null);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/axiosConfig'; // تأكد من صحة المسار حسب مكان الملف
 
 function InterviewPage({ questions = [], onBack }) {
   const [currentStep, setCurrentStep] = useState(0);

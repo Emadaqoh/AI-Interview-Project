@@ -10,8 +10,18 @@ from dotenv import load_dotenv
 
 router = APIRouter()
 
-load_dotenv() # قراءة ملف .env
-api_key = os.getenv("GROQ_API_KEY") # استدعاء المفتاح
+# 1. شحن المتغيرات من ملف .env
+load_dotenv()
+
+# 2. الحصول على المفتاح من بيئة النظام
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+# 3. التأكد من أن المفتاح تم قراءته بنجاح (خطوة اختيارية للحماية)
+if not GROQ_API_KEY:
+    raise ValueError("الرجاء التأكد من وضع GROQ_API_KEY في ملف .env")
+
+# 4. تعريف الكلاينت الآن سيعمل بدون مشاكل
+client = Groq(api_key=GROQ_API_KEY)
 
 # نماذج البيانات (Pydantic Models)
 class SkillsRequest(BaseModel):
