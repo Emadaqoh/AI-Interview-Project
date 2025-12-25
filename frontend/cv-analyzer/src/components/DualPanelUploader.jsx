@@ -96,7 +96,7 @@ const DualPanelUploader = ({ onAnalysisComplete, onStartInterview }) => {
 
           {!analysis ? (
             <div className="h-48 lg:h-96 flex flex-col items-center justify-center border-2 border-dashed border-slate-100 rounded-3xl text-slate-300">
-              <p className="text-base lg:text-lg font-medium text-center px-4">يرجى رفع ملف أولاً لاستخراج البيانات</p>
+              <p className="text-base lg:text-lg font-medium text-center px-4">Please upload your file to start analysis</p>
             </div>
           ) : (
             <ProfessionalDataSheet data={analysis} />
