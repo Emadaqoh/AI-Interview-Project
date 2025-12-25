@@ -5,12 +5,17 @@ from app.routes.cv_routes import router as cv_router
 
 app = FastAPI(title="CV Analyzer API")
 
-# السماح للواجهة الأمامية بالوصول (Vite الافتراضي)
-origins = ["http://localhost:5173"]
+# أضف رابط الـ Vercel الخاص بك هنا ورابط الـ localhost للتجربة
+origins = [
+    "http://localhost:5173",
+    "https://your-frontend-name.vercel.app", # استبدل هذا برابط موقعك الحقيقي على فيرسل
+    "*" # هذا الخيار يسمح لجميع الروابط بالوصول (مفيد جداً لضمان عمل المشروع فوراً)
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"], # نستخدم "*" مؤقتاً لضمان عدم حدوث بلوك (CORS Error)
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
