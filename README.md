@@ -5,92 +5,57 @@
 [![Vue](https://img.shields.io/badge/Frontend-Vue.js-4FC08D?style=flat&logo=vuedotjs)](https://vuejs.org/)
 [![AI-Powered](https://img.shields.io/badge/AI-Powered-FF6F00?style=flat&logo=openai)](https://openai.com/)
 
-An innovative AI-driven platform designed to simulate professional job interviews. This project features a robust **FastAPI** backend and a dual-framework frontend utilizing both **React** and **Vue.js**.
+🚀 AI Interview Project - Full Stack CV Analyzer
+An intelligent CV analysis system built with FastAPI on the backend and React + Vite on the frontend, featuring AI-driven insights powered by the Groq Cloud SDK.
 
----
+📂 Project Architecture
+/frontend/cv-analyzer: React application using Vite, Tailwind CSS, and Axios.
 
-## 🌟 Features
-- **Interactive AI Interviews:** Real-time questions generated based on candidate's profile.
-- **Voice-to-Text Integration:** Seamless interaction using Whisper or Google Speech-to-Text.
-- **Dual-Framework UI:** Hybrid frontend architecture using React and Vue components.
-- **Instant Feedback:** Detailed analysis of answers and performance scores.
+/BackEnd: FastAPI server handling file processing and AI integration.
 
----
+🛠️ Getting Started
+1. Backend Setup (FastAPI)
+Navigate to directory: cd BackEnd
 
-## 🛠️ Tech Stack
-- **Backend:** FastAPI (Python), Pydantic, Uvicorn.
-- **Frontend:** React.js & Vue.js (Hybrid/Monorepo).
-- **AI Models:** OpenAI GPT-4 / LangChain.
-- **Database:** PostgreSQL / MongoDB (Optional).
+Create Virtual Environment: python -m venv venv
 
----
+Activate Environment: * Windows: venv\Scripts\activate
 
-## 🚀 Getting Started
+Mac/Linux: source venv/bin/activate
 
-### Prerequisites
-- **Node.js** (v18+)
-- **Python** (v3.9+)
-- **API Key** (OpenAI)
+Install Dependencies: pip install -r requirements.txt
 
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/your-username/AI-Interview-Project.git](https://github.com/your-username/AI-Interview-Project.git)
-cd AI-Interview-Project
+Environment Variables: Create a .env file in the BackEnd folder:
 
-2. Backend Setup (FastAPI)
+مقتطف الرمز
 
-cd backend
-python -m venv venv
-# On Windows: venv\Scripts\activate | On Mac/Linux: source venv/bin/activate
-pip install -r requirements.txt
-# Create a .env file and add your OPENAI_API_KEY
-uvicorn main:app --reload
+GROQ_API_KEY=your_actual_groq_api_key_here
+Run Server: uvicorn app.main:app --reload
 
-3. Frontend Setup (React & Vue)
+2. Frontend Setup (React + Vite)
+Navigate to directory: cd frontend/cv-analyzer
 
-cd ../frontend
-npm install
-npm run dev
+Install Packages: npm install
 
-_____
-📁 Project Structure
+Environment Variables: Create a .env file in the frontend/cv-analyzer folder:
 
-├── backend/            # FastAPI source code & AI logic
-├── frontend/           # Frontend source (React & Vue components)
-├── .env.example        # Example environment variables
-└── README.md           # Project documentation
-----
-🤝 Contributing
-Fork the Project.
+مقتطف الرمز
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature).
+VITE_API_BASE_URL=http://localhost:8000
+Start Development Server: npm run dev
 
-Commit your Changes (git commit -m 'Add some AmazingFeature').
+🌐 Deployment Links
+Frontend (Vercel): [Insert your Vercel URL here]
 
-Push to the Branch (git push origin feature/AmazingFeature).
+Backend API (Render): [Insert your Render URL here]
 
-Open a Pull Request.
+🤝 How to Contribute
+Fork the repository.
 
-📄 License
-Distributed under the MIT License.
+Create a Branch for your feature: git checkout -b feature/AmazingFeature
 
+Commit your changes: git commit -m 'Add some AmazingFeature'
 
----
+Push to the branch: git push origin feature/AmazingFeature
 
-### كيف تضيف هذا الملف لمشروعك الآن؟
-
-بما أنك تريد العمل مع فريق، اتبع هذه الخطوات بدقة لرفع الملف:
-
-1.  **أنشئ الملف:** في المجلد الرئيسي لمشروعك، أنشئ ملفاً جديداً باسم `README.md`.
-2.  **الصق النص:** انسخ النص الموجود في الأعلى والصقه داخل الملف ثم احفظه.
-3.  **افتح الـ Terminal (الشاشة السوداء) ونفذ الأوامر التالية بالترتيب:**
-
-```bash
-# 1. أخبر جيت أنك أضفت ملفاً جديداً
-git add README.md
-
-# 2. سجل التغيير بوصف واضح
-git commit -m "Add professional README documentation"
-
-# 3. ارفع الملف إلى حسابك على جيت هاب
-git push origin main
+Open a Pull Request for review.
